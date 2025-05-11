@@ -1,0 +1,23 @@
+
+-------------------// Definitions //-------------------------------
+
+1. Subset - Any selection of elements (including empty set) from the original set, in any order.
+2. Subsequence - Elements from the original sequence in the same order, but not necessarily contiguous.
+3. Subarray - A subarray is a contiguous part of an array, subarrays must maintain both order and continuity of elements.
+
+
+
+-------------------// Patterns //-------------------------------
+
+1. Subset
+Always use "Include" and "Exclude" algo to solve Subset.
+--> refer Recursion/09_Subset
+
+2. Subsequence
+Always use "Include" and "Exclude" algo to solve Subsequence.
+--> refer Recursion/10_SubsequenceOfString
+
+3. Permutation
+Swap the index with all the next indexes
+--> refer Recursion/13_Permutations
+

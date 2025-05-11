@@ -1,0 +1,104 @@
+
+-------------- //  primitive data types //  -------------------
+
+-----> Array to List
+int[] intArray = {1, 2, 3};
+List<Integer> intList = Arrays.stream(intArray)
+                              .boxed()
+                              .collect(Collectors.toList());
+
+-----> List to Array
+List<Integer> intList = Arrays.asList(1, 2, 3);
+int[] intArray = intList.stream().mapToInt(i -> i).toArray();
+
+-------------- //  non-primitive data types //  ----------------
+
+-----> Array to List
+String[] array = {"apple", "banana", "orange"};
+List<String> list = Arrays.asList(array);
+
+-----> List to Array
+List<String> list = Arrays.asList("apple", "banana", "orange");
+String[] array = list.toArray(new String[list.size()]);
+
+-------------- //  subList //  ----------------
+
+- startIndex is inclusive.
+- endIndex is exclusive.
+
+List<Integer> firstList = list.subList(start, mid + 1);
+List<Integer> secondList = list.subList(mid + 1, end + 1);
+--->
+- List.subList() returns a view of the original list.
+- When you do list.set(...) to overwrite the original list during merging, you may inadvertently affect firstList and secondList, corrupting the input mid-merge.
+
+Make copies of the sublists so you don’t accidentally modify the same data you're reading from.
+List<Integer> firstList = new ArrayList<>(list.subList(start, mid + 1));
+List<Integer> secondList = new ArrayList<>(list.subList(mid + 1, end + 1));
+
+
+-------------- //  list.get(index1).compareTo(list.get(index2)) //  ----------------
+
+if (firstList.get(firstIndex).compareTo(secondList.get(secondIndex)) <= 0) {
+    // firstList element is smaller or equal
+} else {
+    // secondList element is smaller
+}
+
+-> It will be act like
+firstList.get(firstIndex).compareTo(secondList.get(secondIndex)) = firstList.get(firstIndex) - secondList.get(secondIndex)
+
+------------------ // 2d list //-------------------------------
+
+List<List<Integer>> matrix = new ArrayList<>();
+
+// Creating a 3x3 matrix with values 1 to 9
+for (int i = 0; i < 3; i++) {
+    List<Integer> row = new ArrayList<>();
+    for (int j = 0; j < 3; j++) {
+        row.add(i * 3 + j + 1);
+    }
+    matrix.add(row);
+}
+
+// Printing all elements using for loop
+for (int i = 0; i < matrix.size(); i++) {
+    for (int j = 0; j < matrix.get(i).size(); j++) {
+        System.out.print(matrix.get(i).get(j) + " ");
+    }
+    System.out.println();
+}
+
+------------------ // sorting //-------------------------------
+
+ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("banana");
+        arrayList.add("apple");
+        arrayList.add("cherry");
+
+// Sort in ascending (lexicographical) order
+Collections.sort(arrayList);
+
+// Sort in descending order
+Collections.sort(arrayList, Collections.reverseOrder());
+
+------------------ // StringBuilder //-------------------------------
+StringBuilder sb = new StringBuilder("Hello");
+
+// Add text
+sb.append(" World"); // "Hello World"
+
+// Insert
+sb.insert(5, ","); // "Hello, World"
+
+// Delete
+sb.delete(5, 6); // "Hello World"
+
+// Replace
+sb.replace(6, 11, "Java"); // "Hello Java"
+
+// Reverse
+sb.reverse(); // "avaJ olleH"
+
+// remove last char
+sb.deleteCharAt(sb.length() - 1); // "avaJ olle"
