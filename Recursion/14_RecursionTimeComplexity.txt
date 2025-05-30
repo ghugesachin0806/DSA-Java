@@ -1,0 +1,87 @@
+    -----------------> Time Complexity of Recursion <-----------------------
+----------------------------------------------------------------------------------
+The time complexity of a recursive function depends on:
+    1. Number of recursive calls (branching factor)
+    2. Depth of recursion (how many times the function calls itself)
+    3. Work done in each call (excluding recursive calls)
+
+----------------------------------------------------------------------------------
+1. Basic Recursion (Linear)
+
+Example: Factorial
+
+int factorial(int n) {
+    if (n <= 1) return 1;       // Base case
+    return n * factorial(n - 1); // Recursive call
+}
+
+Time Complexity: O(n)
+→ Each call reduces n by 1 until it reaches the base case.
+
+----------------------------------------------------------------------------------
+2. Binary Recursion (Divide & Conquer)
+
+Example: Fibonacci (Inefficient)
+
+int fib(int n) {
+    if (n <= 1) return n;
+    return fib(n - 1) + fib(n - 2);
+}
+
+Time Complexity: O(2ⁿ) (Exponential)
+→ Each call branches into 2 new calls.
+
+----------------------------------------------------------------------------------
+3. Optimized Fibonacci (Memoization)
+
+Example: Fibonacci
+
+int fibMemo(int n, int[] memo) {
+    if (n <= 1) return n;
+    if (memo[n] != 0) return memo[n];
+    memo[n] = fibMemo(n - 1, memo) + fibMemo(n - 2, memo);
+    return memo[n];
+}
+
+Time Complexity: O(n) (with memoization)
+→ Each fib(n) is computed only once.
+
+----------------------------------------------------------------------------------
+4. Multiple Recursion (Tree-like)
+
+Example: Towers of Hanoi
+
+void hanoi(int n, char src, char aux, char dest) {
+    if (n == 1) {
+        System.out.println("Move disk 1 from " + src + " to " + dest);
+        return;
+    }
+    hanoi(n - 1, src, dest, aux);
+    System.out.println("Move disk " + n + " from " + src + " to " + dest);
+    hanoi(n - 1, aux, src, dest);
+}
+
+Time Complexity: O(2ⁿ)
+→ Each call branches into 2 new calls.
+
+----------------------------------------------------------------------------------
+5. Recursion with Loops
+
+Example: Permutations of a String
+
+void permute(String str, int l, int r) {
+    if (l == r) {
+        System.out.println(str);
+        return;
+    }
+    for (int i = l; i <= r; i++) {
+        str = swap(str, l, i);
+        permute(str, l + 1, r);
+        str = swap(str, l, i);
+    }
+}
+
+Time Complexity: O(n × n!)
+→ n! permutations, each taking O(n) time.
+
+----------------------------------------------------------------------------------

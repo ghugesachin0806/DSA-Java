@@ -1,0 +1,14 @@
+// https://www.geeksforgeeks.org/convert-infix-prefix-notation/
+
+1. Reverse the infix expression. Note while reversing each '(' will become ')' and each ')' becomes '('.
+2. Convert the reversed infix expression to postfix expression.
+    -> Initialize an empty stack to store operators and an empty string for the postfix expression.
+    -> Scan the infix expression from left to right.
+    -> If the character is an operand, append it to the postfix expression.
+    -> If the character is '(', push it onto the stack.
+    -> If the character is ')', pop from the stack and append to the postfix expression until
+       '(' is found, then pop '(' without appending.
+    -> If the character is an operator, pop and append operators from the stack until the stack is empty
+       or a lower precedence operator is found, then push the current operator onto the stack.
+    -> After scanning the expression, pop and append all remaining operators from the stack to the postfix expression.
+3. Reverse the postfix expression and return it.

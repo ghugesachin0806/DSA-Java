@@ -1,0 +1,33 @@
+1. Infix Notation
+Definition: Operators are written between the operands.
+Example:
+A + B
+(A + B) * C
+
+2. Prefix Notation
+Definition: Operators are written before their operands.
+Example:
++ A B
+* + A B C (which is (A + B) * C)
+
+3. Postfix Notation 
+Definition: Operators are written after their operands.
+Example:
+A B +
+A B + C * (which is (A + B) * C)
+
+4. Conversion Examples
+
+Infix to Postfix:
+1. Infix: (A + B) * C → Postfix: A B + C *
+2. Infix:  → Postfix: 
+
+Infix to Prefix:
+1. Infix: (A + B) * C → Prefix: * + A B C
+2. Infix:  → Prefix:
+
+// ---- precedence order ---- //
+1. ^
+2. *,/
+3. -,+
+4. (,)

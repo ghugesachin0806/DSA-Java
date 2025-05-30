@@ -1,0 +1,43 @@
+1. Using Stack Class (Legacy)
+
+Stack<Integer> stack = new Stack<>();
+
+// Push elements
+stack.push(10);
+stack.push(20);
+stack.push(30);
+
+// Peek (get top element)
+System.out.println("Top element: " + stack.peek()); // 30
+
+// Pop (remove top element)
+System.out.println("Popped: " + stack.pop()); // 30
+
+// Check if empty
+System.out.println("Is empty? " + stack.empty()); // false
+
+-------------------------------------------------------------------------------
+
+2. Using ArrayDeque (Recommended)
+
+ArrayDeque<Integer> stack = new ArrayDeque<>();
+
+// Push elements
+stack.push(10);
+stack.push(20);
+stack.push(30);
+
+// Peek (get top element)
+System.out.println("Top element: " + stack.peek()); // 30
+
+// Pop (remove top element)
+System.out.println("Popped: " + stack.pop()); // 30
+
+// Check if empty
+System.out.println("Is empty? " + stack.isEmpty()); // false
+
+// Get size
+System.out.println("Size: " + stack.size()); // 2 (remaining elements: 20, 10)
+
+-------------------------------------------------------------------------------
+1. char ---> Character in collection framework

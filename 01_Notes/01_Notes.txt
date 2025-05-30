@@ -1,0 +1,26 @@
+Creating a 2D ArrayList in Java
+
+1. Basic 2D ArrayList Declaration
+// Most common declaration
+ArrayList<ArrayList<Integer>> twoDArrayList = new ArrayList<ArrayList<Integer>>();
+--------------------------------------------------------------------------------------------------------------------------
+
+2. Empty 2D ArrayList
+ArrayList<ArrayList<String>> matrix = new ArrayList<>();
+--------------------------------------------------------------------------------------------------------------------------
+
+3. 2D ArrayList with Initial Rows
+int rows = 3;
+ArrayList<ArrayList<Integer>> grid = new ArrayList<>(rows);
+for (int i = 0; i < rows; i++) {
+    grid.add(new ArrayList<Integer>());
+}
+--------------------------------------------------------------------------------------------------------------------------
+
+4. 2D ArrayList with Initial Values
+ArrayList<ArrayList<Integer>> table = new ArrayList<>() {{
+    add(new ArrayList<>(Arrays.asList(1, 2, 3)));
+    add(new ArrayList<>(Arrays.asList(4, 5, 6)));
+    add(new ArrayList<>(Arrays.asList(7, 8, 9)));
+}};
+--------------------------------------------------------------------------------------------------------------------------

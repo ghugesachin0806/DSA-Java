@@ -1,0 +1,7 @@
+Array Sort
+
+int[] nums1, nums2;
+
+// sort the both array
+Arrays.sort(nums1);
+Arrays.sort(nums2);

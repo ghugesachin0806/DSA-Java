@@ -1,0 +1,14 @@
+1. The inorder traversal of a Binary Search Tree (BST) will always give you the elements in sorted (ascending) order.
+
+Given elements (inserted in order): 42 17 8 23 56 3 91 12 30 7
+BST structure built from those values:
+         42
+       /    \
+     17      56
+    /  \        \
+   8   23       91
+  / \     \
+ 3   12   30
+      /
+     7
+Inorder Traversal Output: 3 7 8 12 17 23 30 42 56 91

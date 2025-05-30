@@ -1,0 +1,40 @@
+Tree Traversal Techniques
+
+Tree traversal refers to the process of visiting (checking or updating) each node in a tree data structure exactly once. 
+There are several types of traversals, which are primarily categorized by the order in which nodes are visited.
+--------------------------------------------------------------------------------------------------------------------------
+Depth-First Traversals (DFS)
+
+These traversals explore as far as possible along each branch before backtracking.
+
+1. Pre-order Traversal (NLR)
+→ Visit the current node (N)
+→ Recursively traverse the left subtree (L)
+→ Recursively traverse the right subtree (R)
+
+2. In-order Traversal (LNR)
+→ Recursively traverse the left subtree (L)
+→ Visit the current node (N)
+→ Recursively traverse the right subtree (R)
+→ For binary search trees, this yields nodes in sorted order
+
+3. Post-order Traversal (LRN)
+→ Recursively traverse the left subtree (L)
+→ Recursively traverse the right subtree (R)
+→ Visit the current node (N)
+
+--------------------------------------------------------------------------------------------------------------------------
+Breadth-First Traversal (BFS) [Level Order traversal]
+
+→ Visit nodes level by level from top to bottom
+→ Within each level, visit nodes from left to right
+→ Typically implemented using a queue
+
+--------------------------------------------------------------------------------------------------------------------------
+***** Note
+
+ArrayDeque does not allow null values by design — this is intentional and has strong reasoning behind it:
+Internally, ArrayDeque uses null as a marker to identify empty slots in its underlying array.
+
+** Use a LinkedList instead of ArrayDeque, as LinkedList allows null elements and can still be used as a queue.
+--------------------------------------------------------------------------------------------------------------------------
